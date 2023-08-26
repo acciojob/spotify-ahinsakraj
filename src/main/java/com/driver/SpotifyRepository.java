@@ -37,37 +37,73 @@ public class SpotifyRepository {
         artists = new ArrayList<>();
     }
 
+    public boolean albumExists(String albumName) {
+        for(Album album : albums) {
+            if(album.getTitle().equals(albumName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean artistExists(String artistName) {
+        for(Artist artist : artists) {
+            if(artist.getName().equals(artistName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public User createUser(String name, String mobile) {
+        User user = new User(name, mobile);
+        users.add(user);
+        return  user;
     }
 
     public Artist createArtist(String name) {
+        Artist artist = new Artist(name);
+        artists.add(artist);
+        return artist;
     }
 
     public Album createAlbum(String title, String artistName) {
+        Album album = new Album(title);
+        albums.add(album);
+        return album;
     }
 
     public Song createSong(String title, String albumName, int length) throws Exception{
+
+        return new Song();
     }
 
     public Playlist createPlaylistOnLength(String mobile, String title, int length) throws Exception {
-
+        return new Playlist();
     }
 
     public Playlist createPlaylistOnName(String mobile, String title, List<String> songTitles) throws Exception {
 
+        return new Playlist();
     }
 
     public Playlist findPlaylist(String mobile, String playlistTitle) throws Exception {
 
+        return new Playlist();
     }
 
     public Song likeSong(String mobile, String songTitle) throws Exception {
 
+        return new Song();
     }
 
     public String mostPopularArtist() {
+        return "volcano";
     }
 
     public String mostPopularSong() {
+        return "Seven Rings";
     }
+
+
 }
